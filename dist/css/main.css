@@ -64,6 +64,13 @@ h1 {
         color: #313131; }
         .date-picker .dates .days .day.selected {
           background-color: #00ca85; }
+    .date-picker .dates .week-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); }
+      .date-picker .dates .week-days .week-day {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
   .date-picker .selected-date {
     width: 100%;
     height: 100%;
