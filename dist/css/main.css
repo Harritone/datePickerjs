@@ -62,6 +62,10 @@ h1 {
         justify-content: center;
         align-items: center;
         color: #313131; }
+        .date-picker .dates .days .day:hover:not(.selected):not(.prev-date):not(.next-date) {
+          background-color: #f3f3f3; }
+        .date-picker .dates .days .day.prev-date, .date-picker .dates .days .day.next-date {
+          opacity: 0.5; }
         .date-picker .dates .days .day.selected {
           background-color: #00ca85; }
     .date-picker .dates .week-days {

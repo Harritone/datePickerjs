@@ -82,6 +82,15 @@ h1 {
         align-items: center;
         color: #313131;
 
+        &:hover:not(.selected):not(.prev-date):not(.next-date) {
+          background-color: #f3f3f3;
+        }
+
+        &.prev-date,
+        &.next-date {
+          opacity: 0.5;
+        }
+
         &.selected {
           background-color: #00ca85;
         }
