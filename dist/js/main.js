@@ -37,7 +37,7 @@ class DatePicker {
     this.startDate.setDate(1);
 
     this.mthElement.textContent = this.months[this.month] + " " + this.year;
-    this.selectedDateElement.textContent = this.formatDate(this.date);
+    this.selectedDateElement.textContent = Helper.formatDate(this.date);
     this.selectedDateElement.dataset.value = this.selectedDate;
     this.weekNamesWrapper = this.container.querySelector(".dates .week-days");
   }
@@ -86,7 +86,6 @@ class DatePicker {
 
   toggleContainerHandler(e) {
     if (!Helper.checkEventPath(e.path, "dates")) {
-      console.log(this.datesElement);
       this.datesElement.classList.toggle("active");
     }
   }
@@ -163,7 +162,7 @@ class DatePicker {
         this.selectedDay = i;
         this.selectedMonth = this.month;
         this.selectedYear = this.year;
-        this.selectedDateElement.textContent = this.formatDate(
+        this.selectedDateElement.textContent = Helper.formatDate(
           this.selectedDate
         );
 
@@ -184,28 +183,6 @@ class DatePicker {
     } else {
       nextDayElement = document.createElement("div");
     }
-  }
-
-  checkEventPath(path, selector) {
-    for (let i = 0; i < path.length; i++) {
-      if (path[i].classList && path[i].classList.contains(selector)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  formatDate(d) {
-    let day = d.getDate();
-    if (day < 10) {
-      day = "0" + day;
-    }
-    let month = d.getMonth() + 1;
-    if (month < 10) {
-      month = "0" + month;
-    }
-    const year = d.getFullYear();
-    return `${day} / ${month} / ${year}`;
   }
 }
 
